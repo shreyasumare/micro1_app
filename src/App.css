@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
-}
+/* App.css */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.box {
+  background-color: blue;
   color: white;
+  padding: 20px; /* Adjust the padding to increase the dimensions */
+  text-align: center;
+  border-radius: 8px;
 }
 
-.App-link {
-  color: #61dafb;
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Start off-screen */
+  height: 100vh;
+  width: 250px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  transition: left 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.sidebar.open {
+  left: 0;
+}
+
+.toggle-btn {
+  background-color: #555;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Adjust main content when the sidebar is open */
+.sidebar-open {
+  grid-template-columns: 250px 1fr 1fr;
+  transition: grid-template-columns 0.3s ease;
+}
+
+/* Additional styling for different screen sizes if needed */
+@media screen and (max-width: 600px) {
+  .box {
+    /* Adjust styles for smaller screens if needed */
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (min-width: 768px) {
+  .box {
+    /* Adjust styles for medium-sized screens if needed */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .box {
+    /* Adjust styles for larger screens if needed */
   }
 }
